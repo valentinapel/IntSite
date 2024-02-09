@@ -1,0 +1,59 @@
+####################################################
+Revisione Gecko Portale data 30-04-2022
+Autore:tomasella denis
+#######################################################
+
+Attivita svolte :
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+1-Gestione pagine tramite Snippets:
+--->Footer.html (Data per la sezione footer) , possibile inserire icone social ecc.
+--->Head.html (import file bootstrap ecc)
+--->Header.html (Menu)
+--->script.html (import file jquery e javascript)
+La modalita include {% include "/a/b %} migliora l'usabilità del codice e suo riciclo.
+
+2-Import Java Script e Jquery
+Funzioni necessari per migliorare l'aspetto della nostra webapp e per futuri upgrade con pagine di tipo SPA e non MFA
+
+3-Import Icone e font awesome interrative vedi login e logout
+
+4-Gestione Error handler 
+Uso di flask per la gestione dell errore 400,nel caso di tentativi malevole .
+
+5-Gestione feedback login di accesso in caso di dati errati
+Segnalazione all'utente nel caso di errato inserimento dati in fase di login
+
+Pagne conivolte 
+->Home
+->Login
+->Cercafilm ---> da rivedere la qry(non mi sembra funzionare)
+->Areariservata
+->adminHome
+->statistiche
+->GestioneUser
+->Nuovofilm
+->filmtrovati
+
+####################################################
+Revisione Gecko Portale data 02-05-2022
+Autore:tomasella denis
+#######################################################
+Corretto Bug Menu portato responsive
+Corretto Bug Login per errata migrazione
+Corretto Bug page nont found
+Page statistiche ---> da rendere responsive
+Page utenti ----> rendere responsive
+Page Films  -----> rendere responsive
+
+
+#########################################################
+#07/05/2022
+Creata tabella Book
+Import nel run.py la creazione tabella Book
+Inserito CercaBook
+Inserito tabs in home per la gestione film e libri
+Corretto bug in caso di nessun dato trovato in ricerca book e flim
+Ho testato il login e log out
+Non ho fatto i test di modifica e rimozione book, non ci perderei altro tempo
+

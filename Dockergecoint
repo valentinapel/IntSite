@@ -1,0 +1,39 @@
+#GecoInt Dockerfile
+
+FROM alpine:3.11
+
+# VERSIONS
+ENV ALPINE_VERSION=3.11 \
+    PYTHON_VERSION=3.9.12
+
+ENV PYTHON_PATH=/usr/local/bin/ \
+    PATH="/usr/local/lib/python$PYTHON_VERSION/bin/:/usr/local/lib/pyenv/versions/$PYTHON_VERSION/bin:${PATH}"
+
+#WORKDIR /GecoI
+COPY ./ ./
+#WORKDIR /GecoInt
+
+# Install python/pip
+ENV PYTHONUNBUFFERED=1
+
+RUN apk add py3-pip	
+RUN	pip3 install --upgrade pip
+
+#install python library
+RUN pip install -r requirements.txt
+
+EXPOSE 8180
+
+CMD ["python3", "./run.py"]
+
+#README
+# To build and run this dockerfile follow the following steps:
+# cd "D:\User\...\GecoInt>
+# docker build . --file Dockergecoint --tag gecoint:alpinepyp
+# docker images
+# docker run -d -p 8180:8180 --name gecoint gecoint:alpinepyp
+#                   oppure
+# docker run -d -p 8180:8180 --name gecoint IMAGEID
+#
+#
+#docker save -o ./GecointContainer gecoint:alpinepyp
