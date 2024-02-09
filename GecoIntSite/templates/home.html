@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  
+  {% include "/Snippets/head.html" %}
+
+  <body class="bg-dark">
+
+    {%include "/Snippets/header.html" %}
+    <main role="main" class="bg-dark">
+      <div class="container my-5">
+          <h1 class="text-center" style="font-size: 80px; font-family:sans-serif; color: white">Geco Interest</h1>
+      </div>
+    <div class="album py-5 bg-mycolor">
+      <div class="container col-10">
+        <ul class="nav nav-tabs " role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#menu1">FILM</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#menu2">BOOK</a>
+          </li>
+        </ul>
+        <div class="tab-content mt-3">
+          <div id="menu1" class="container-fluid tab-pane active">
+
+        <div class="row">
+          {% for film in films %}
+          <div class="col-md-3">
+            <div class="card mb-4 shadow-sm">
+              <img src="{{ film.locandina }}" height="530">
+              <div class="card-body">
+                <div class="d-flex justify-content-between"><p class="card-text"><strong> Annno: </strong>{{film.annoproduzione}}</p></div>
+                <div class="d-flex justify-content-between"><p class="card-text"><strong> Regista: </strong>{{film.regista}}</p></div>
+                <div class="d-flex justify-content-between"><p class="card-text"><strong> Genere: </strong>{{film.genere}}</p></div>
+                <div class="d-flex justify-content-between"><p class="card-text">{{film.descrizione}}</p></div>
+                {% if current_user.is_authenticated %}
+                <div><a class="btn btn-danger btn-secondary" href="{{ url_for('removeonmylist', media_id = film.id) }}">Remove on List</a></div>
+                {% endif%}
+                <br>
+                <div class="row">
+                  {% if current_user.admin == true %}
+                    <a href="{{ url_for('modificadescrizione', id_film = film.id) }}" class="btn btn-warning btn-secondary" role="button">Modifica descrizione</a> 
+                  {% endif%}
+                </div>
+                  
+  
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>  <!-- end row-->
+      </div> <!-- end tab1-->
+      <div id="menu2"  class="container tab-pane fade">
+     
+        <div class="row">
+          {% for book in Books %}
+          <div class="col-md-3">
+            <div class="card mb-4 shadow-sm">
+              <img src="{{ book.locandina }}" height="530">
+              <div class="card-body">
+                <div class="d-flex justify-content-between"><p class="card-text"><strong> Annno: </strong>{{book.annoproduzione}}</p></div>
+                <div class="d-flex justify-content-between"><p class="card-text"><strong> Autore: </strong>{{book.autore}}</p></div>
+                <div class="d-flex justify-content-between"><p class="card-text"><strong> Genere: </strong>{{book.genere}}</p></div>
+                <div class="d-flex justify-content-between"><p class="card-text">{{book.descrizione}}</p></div>
+                {% if current_user.is_authenticated %}
+                <div><a class="btn btn-danger btn-secondary" href="{{ url_for('removeonmylist', media_id = book.id) }}">Remove on List</a></div>
+                {% endif%}
+                <br>
+                <div class="row">
+                  {% if current_user.admin == true %}
+                    <a href="{{ url_for('modificadescrizione', id_film = book.id) }}" class="btn btn-warning btn-secondary" role="button">Modifica descrizione</a> 
+                  {% endif%}
+                </div>
+                  
+  
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>  <!-- end row-->
+
+
+      </div><!-- end tab2-->
+    </div> <!-- end tab content-->
+      </div>
+    </div>
+    {%include "/Snippets/script.html" %}
+  </main>
+  </body>
+  
+  {%include "/Snippets/footer.html" %}
+</html>

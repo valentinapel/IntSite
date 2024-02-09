@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+  {% include "/Snippets/head.html" %}
+
+  <body class="text-center bg-dark">
+  {%include "/Snippets/header.html" %}
+
+    <div class="container col-3 my-6">
+    
+      <form method="POST" action="">
+	       <h1 class="h3 mb-3 font-weight-normal" style="color: white">Cerca un Libro, un genere o un Autore:</h1>
+            {{ form.hidden_tag() }}
+              <div class="row">
+                <div class="container col-7">
+                  <div class="form-group">
+                    {{ form.ricerca(class="form-control") }}
+                  </div>   
+                </div>
+              </div>
+            <div class="form-group">
+              {{ form.cerca(class="btn btn-success") }}
+            </div>
+      </form>
+    </div>
+    {%include "/Snippets/script.html" %}
+  </body>
+  {%include "/Snippets/footer.html" %}
+</html>

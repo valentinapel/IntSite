@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>gecoint - Elimina Film</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/customized.css">
+
+  </head>
+
+  <body class="text-center bg-dark">
+    <div class="container col-3 my-6 text-center">
+      <h1 class="h3 mb-3 font-weight-normal" style="color: lightblue">Eliminare il film:</h1>
+      <h1 style="color: white">{{ film.titolo }}</h1><h1 class="h3 mb-3 font-weight-normal" style="color: lightblue">e relative proiezioni?</h1>
+        <br>
+        <br>
+        <div class="row text-center">
+          <div class="container col-2"><a href="{{ url_for('gestionefilm') }}" class="btn btn-light">Annulla</a></div>
+          <div class="container col-2"><a href="{{ url_for('eliminafilm', film_id = film.id) }}" class="btn btn-danger">Elimina</a></div>
+        </div>
+
+    </div>
+  </body>
+</html>

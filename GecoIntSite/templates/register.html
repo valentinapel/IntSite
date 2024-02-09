@@ -1,0 +1,143 @@
+
+<!doctype html>
+<html lang="en">
+    {% include "/Snippets/head.html" %}
+
+  <body class="text-center bg-dark">
+    {%include "/Snippets/header.html" %}
+    <div class="container col-5">
+        <form method="POST" action="">
+	       <img src="static/images/geckologo.png" width="200" height="200">
+	           <h1 class="h3 mb-3 font-weight-normal" style="color: white">Effettua la registrazione</h1>
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+             <div class="row ">
+                 <div class="container col-4">
+               <div class="form-group">
+                {{ form.nome.label(class="form-control-label", style="color: white") }}
+                    {% if form.nome.errors %}
+                        {{ form.nome(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.nome.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.nome(class="form-control form-control", placeholder="Nome",  ) }}
+            
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.cognome.label(class="form-control-label", style="color: white") }}
+                    {% if form.cognome.errors %}
+                        {{ form.cognome(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.cognome.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.cognome(class="form-control form-control", placeholder="Cognome",  ) }}
+            
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.nazione.label(class="form-control-label", style="color: white") }}
+                    {% if form.nazione.errors %}
+                        {{ form.nazione(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.nazione.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.nazione(class="form-control form-control", placeholder="Nazione",  ) }}
+            
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.provincia.label(class="form-control-label", style="color: white") }}
+                    {% if form.provincia.errors %}
+                        {{ form.provincia(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.provincia.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.provincia(class="form-control form-control", placeholder="Provincia",  ) }}
+            
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.annonascita.label(class="form-control-label", style="color: white") }}
+                    {% if form.annonascita.errors %}
+                        {{ form.annonascita(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.annonascita.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.annonascita(class="form-control form-control", placeholder="Anno di nascita",  ) }}
+            
+                    {% endif %}
+                </div>
+                </div>
+
+                <div class="container col-4">
+                    <div class="form-group">
+                    {{ form.email.label(class="form-control-label", style="color: white") }}
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email(class="form-control form-control", placeholder="Indirizzo email",  ) }}
+            
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.password.label(class="form-control-label", style="color: white") }}
+                    {% if form.password.errors %}
+                        {{ form.password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(class="form-control form-control", placeholder="password",  ) }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.confermapassword.label(class="form-control-label", style="color: white") }}
+                    {% if form.confermapassword.errors %}
+                        {{ form.confermapassword(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.confermapassword.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.confermapassword(class="form-control form-control", placeholder="conferma password",  ) }}
+                    {% endif %}
+                </div>
+                </div>s
+             </div>
+              
+		        
+        
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+    </div>
+    {%include "/Snippets/script.html" %}
+  </body>
+  {%include "/Snippets/footer.html" %}
+</html>

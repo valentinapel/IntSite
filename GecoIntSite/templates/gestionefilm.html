@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+  {% include "/Snippets/head.html" %}
+
+  <body class="bg-dark">
+    {%include "/Snippets/header.html" %}
+
+
+    <div class="my-statistiche col-12"> 
+      <div class="row">
+        <div class="col-5"></div>     
+        <div class="col-2">
+          <a class="btn btn-success" style="font-size: 20px" href="{{ url_for('nuovofilm') }}">Aggiungi Film</a>        
+        </div>
+      </div>
+        
+    </div>
+    <div class="mt-5">
+      <div class="row">
+      <div class="col-2"></div> <!--Per centrare la tabella-->
+      <div class="col-7">
+        <table class="table table-dark">
+        <!-- Titoli della tabella -->
+          <thead>
+            <tr>
+              <th scope="col" style="color:lightblue; font-size: 20px">Titolo</th>
+              <th scope="col" style="color:lightblue; font-size: 20px">Regista</th>
+              <th scope="col" style="color:lightblue; font-size: 20px">Anno</th>
+              <th scope="col" style="color:lightblue; font-size: 20px">Genere</th>
+              <th scope="col" style="color:lightblue; font-size: 20px"></th>
+              <th scope="col" style="color:lightblue; font-size: 20px"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for film in films %}
+            <tr>
+              <td scope="row">{{film.titolo}}</td>
+              <td scope="row">{{film.regista}}</td>
+              <td scope="row">{{film.annoproduzione}}</td>
+              <td scope="row">{{film.genere}}</td>             
+              <td scope="row">
+                <a class="btn btn-danger" href="{{ url_for('confermaeliminafilm', film_id = film.id) }}">Elimina</a>
+              </td>
+            </tr>
+            {% endfor %}
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </div>
+    {%include "/Snippets/script.html" %}
+   
+  </body>
+  {%include "/Snippets/footer.html" %}
+</html>

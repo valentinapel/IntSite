@@ -1,0 +1,34 @@
+
+<!doctype html>
+<html lang="en">
+  {% include "/Snippets/head.html" %}
+
+  <body class="bg-mycolor">
+    {%include "/Snippets/header.html" %}
+
+
+    <main role="main" class="bg-mycolor my-5">
+      <div class="jumbotron jumbotron-fluid bg-dark">
+        <div class="container">
+          <h1 class="display-4 text-center" style="color: white">{{utente.nome}} {{utente.cognome}}</h1>
+        </div>
+        <!-- INFORMAZIONI GENERICHE -->
+        <div class="row mb-3 text-center">
+          <div class="col-4"></div>
+            <div class="col-1 ">
+              <p style="color: lightblue; font-size: 18px"> {{utente.provincia}}</p>
+            </div>
+          <div class="col-2 ">
+              <p style="color: lightblue; font-size: 18px"> {{utente.email}}</p>
+          </div>
+          <div class="col-1 ">
+              <p style="color: lightblue; font-size: 18px"> {{utente.annonascita}}</p>
+          </div>
+        </div>
+      </div>
+      {%include "/Snippets/script.html" %}
+    </main>
+ </body>
+ 
+  {%include "/Snippets/footer.html" %}
+</html>

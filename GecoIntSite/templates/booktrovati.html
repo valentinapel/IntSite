@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  {% include "/Snippets/head.html" %}
+
+  <body class="bg-mycolor">
+    {%include "/Snippets/header.html" %}
+
+  <div class="album py-5 bg-mycolor py-5 my-5">
+    <h1 style="color: lightblue" class="text-center">Risultati della ricerca:</h1>
+    <br>
+    <div class="container col-10">
+      <div class="row">
+      {% if filmtrovati == [] %}
+        <small style="color:white"> Non sono stati trovati risultati per questa ricerca </small>
+      {% endif %}
+        {% for book in booktrovati %}
+          {% if film != None %}
+            <div class="col-md-3">
+              <div class="card mb-4 shadow-sm">
+                <img src="{{ book.locandina }}" height="530">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between"><p class="card-text"><strong> Anno: </strong>{{book.annoproduzione}}</p></div>
+                  <div class="d-flex justify-content-between"><p class="card-text"><strong> Autore: </strong>{{book.autore}}</p></div>
+                  <div class="d-flex justify-content-between"><p class="card-text"><strong> Genere: </strong>{{book.genere}}</p></div>
+                  <div class="d-flex justify-content-between"><p class="card-text">{{book.descrizione}}</p></div>
+                  {% if current_user.is_authenticated %}
+                    {% if book.idUser == Null or book.idUser == None %}
+                    <div>
+                      <a class="btn btn-warning btn-secondary" href="{{ url_for('addonmylist', media_id = book.id) }}">Add on List</a>
+                    </div>
+                    {% else %}
+                      <div><a class="btn btn-danger btn-secondary" href="{{ url_for('removeonmylist', media_id = book.id) }}">Remove on List</a></div>                        
+                    {% endif%}
+                  {% endif%}
+                  <div class="row">
+                    {% if current_user.admin == true %}
+                      <a href="#" class="btn btn-warning btn-secondary" role="button">Modifica descrizione</a>
+                    {% endif%}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {%include "/Snippets/script.html" %}
+</body>
+{%include "/Snippets/footer.html" %}
+</html>

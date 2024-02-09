@@ -1,0 +1,51 @@
+.bg-dark {
+	background-color: #151130 !important;
+}
+
+.bg-mycolor {
+	background-color: #2d2566 !important;
+}
+.bg-mycolor2 {
+	background-color: #2f2954 !important;
+}
+
+.py-5 {
+  padding-top: 2rem !important;
+}
+
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.my-navbar {
+  margin-top: 3.4rem !important;
+}
+
+.my-statistiche {
+  margin-top: 7rem;
+}
+
+
+/* Usato nell'area riservata*/
+.ml-myleftmargin {
+  margin-left: 9rem !important;
+}
+
+/* Usato per centrare i form del login */
+.my-6 {
+   margin-top: 13rem !important;
+}
+
+.ml-megamargine {
+  margin-left: 28rem !important;
+}

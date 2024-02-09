@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>gecoint - Promuovi Utente</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/customized.css">
+
+  </head>
+
+  <body class="text-center bg-dark">
+    <div class="container col-3 my-6 text-center">
+      <h1 class="h3 mb-3 font-weight-normal" style="color: lightblue">Promuovere a ruolo di amministratore l'utente:</h1>
+      <h1 style="color: white">{{ utente.nome }} {{ utente.cognome }}?</h1>
+        <br>
+        <br>
+        <div class="row text-center">
+          <div class="container col-2"><a href="{{ url_for('gestioneuser', modalita = 1) }}" class="btn btn-light">Annulla</a></div>
+          <div class="container col-2"><a href="{{ url_for('promuoviutente', idutente = utente.id) }}" class="btn btn-success">Promuovi</a></div>
+        </div>
+
+    </div>
+  </body>
+</html>

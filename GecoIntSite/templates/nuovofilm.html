@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+  {% include "/Snippets/head.html" %}
+
+  <body class="text-center bg-dark">
+    
+    {% include "/Snippets/header.html" %}
+
+    <div class="container col-4 my-6">
+      <form method="POST" enctype="multipart/form-data" action="{{ url_for('nuovofilm') }}">
+         <h1 class="h3 mb-3 font-weight-normal" style="color: white">Riempi i seguenti campi:</h1>
+            {{ form.hidden_tag() }}
+              <div class="row">
+
+                <div class="container col-4">
+                  <div class="form-group">
+                    {{ form.titolo.label(class="form-control-label", style="color: white") }}
+                    {{ form.titolo(class="form-control") }}
+                  </div>   
+                </div>
+                
+                <div class="container col-4">
+                  <div class="form-group">
+                    {{ form.regista.label(class="form-control-label", style="color: white") }}
+                    {{ form.regista(class="form-control") }}
+                  </div>
+                </div>      
+
+                <div class="container col-4">
+                  <div class="form-group">
+                    {{ form.anno.label(class="form-control-label", style="color: white") }}
+                    {{ form.anno(class="form-control") }}
+                  </div>     
+                </div>
+
+                <div class="container col-4">
+                  <div class="form-group">
+                    {{ form.genere.label(class="form-control-label", style="color: white") }}
+                    {{ form.genere(class="form-control") }}
+                  </div>     
+                </div>
+                <div class="container col-4">
+                  <div class="form-group">
+                    {{ form.durata.label(class="form-control-label", style="color: white") }}
+                    {{ form.durata(class="form-control") }}
+                  </div>     
+                </div>                
+                <div class="container col-4">
+                  <div class="form-group">
+                    {{ form.descrizione.label(class="form-control-label", style="color: white") }}
+                    {{ form.descrizione(class="form-control") }}
+                  </div>     
+                </div>
+                <div class="container col-5">
+                  <input type=file name=file class="form-control-label">
+                </div>                           
+              </div>
+              <br>
+              <div class="row text-center">
+                <div class="col-3"></div>
+                <a class="btn btn-light" href="{{ url_for('gestionefilm') }}">Annulla</a>
+                <div class="col-2"></div>
+                <div class="form-group">                  
+                  {{ form.aggiungi(class="btn btn-success") }}
+                </div>                
+              </div>                
+      </form>
+              
+    </div>
+    {%include "/Snippets/script.html" %}
+  </body>
+  {%include "/Snippets/footer.html" %}
+</html>

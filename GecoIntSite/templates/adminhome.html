@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  {% include "/Snippets/head.html" %}
+
+  <!-- barra di navigazione -->
+  <body class="bg-dark">
+
+    {%include "/Snippets/header.html" %}
+
+    <!-- titolo e logo -->
+    <div class="container my-5">
+        <h1 style="font-size: 55px; font-family:sans-serif; color: white">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspGeco Movie: pannello di controllo</h1>
+    </div>
+    <!-- bottoni -->
+
+    <div class="container col-10 style="margin-top: 60px;">
+
+      <div class="row text-center">
+
+      	<div class="col-4 md-3">
+      		<a href="{{ url_for('statistiche') }}" class="btn btn-lg btn-primary">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Statistiche &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+      		<br>
+      		<br>
+
+      		<p style="color: white"> Ottieni statistiche su utenti </p>
+      	</div>
+      	<div class="col-4 md-3">
+      		<a href="{{ url_for('gestioneuser', modalita = 1) }}" class="btn btn-lg btn-warning">&nbsp&nbsp&nbsp&nbsp Gestisci Utenti &nbsp&nbsp&nbsp&nbsp</a>
+      		<br>
+      		<br>
+      		<p style="color: white"> Visualizza tutti gli utenti registrati, promuovi utenti al ruolo di amministratore, elimina tutte le prenotazioni di un utente o elimina l'utente stesso. </p>
+      	</div>
+        <div class="col-4 md-3">
+          <a href="{{ url_for('gestionefilm') }}" class="btn btn-lg btn-danger">&nbsp&nbsp&nbsp&nbsp Films &nbsp&nbsp&nbsp&nbsp</a>
+          <br>
+          <br>
+          <p style="color: white"> Visualizza o aggiungi film e gestisci le relative proiezioni.</p>
+          </div>
+      </div>
+    </div>
+    {%include "/Snippets/script.html" %}
+</body>
+{%include "/Snippets/footer.html" %}
+</html>
